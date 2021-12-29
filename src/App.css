@@ -7,6 +7,29 @@
   pointer-events: none;
 }
 
+.input-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.all-pictures{
+  border-radius: 50%;
+  /* border: 1px solid black; */
+}
+
+.span-btns{
+  /* width: 150px ; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* background-color: red; */
+}
+
+.main-content{
+  margin-bottom: 3em;
+  padding: '50px';
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
