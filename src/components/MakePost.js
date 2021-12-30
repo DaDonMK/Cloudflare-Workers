@@ -86,7 +86,7 @@ function MakePost(props) {
         </Grid>
         <Grid container className={classes.root}>
             <Grid item xs>
-                <TextField placeholder="Enter Image URL..." label="Optional" onChange={e => setImage(e.target.value)}/>
+                <TextField placeholder="Enter Image/GIF URL..." label="Optional" onChange={e => setImage(e.target.value)}/>
             </Grid>
         </Grid>
         <Grid container className={classes.root}>

@@ -84,7 +84,7 @@ function Posts(props) {
           return <div key={i} className="main-content">
               <br/> 
               {e.image === "" ? <p>NO IMAGE AVAILABLE</p> : 
-                <img src={e.image} alt="all pictures" className="all-pictures" height="150" width="150"/>   
+                <img src={e.image} alt="all pictures" className="all-pictures" width="15%"/>   
               }
               <br />
               <Grid container className={classes.root}> 
