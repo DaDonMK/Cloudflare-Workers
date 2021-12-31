@@ -43,17 +43,23 @@ function MakePost(props) {
 
   const {classes} = props
 
-  async function handleClick(){
+  function handleClick(){
 
     if(title === "" || username === "" || content === ""){
         toast.error('Make sure to fill all inputs')
         return 
     }
     //https://shielded-sea-81384.herokuapp.com/
-    let res = await axios.put("https://shielded-sea-81384.herokuapp.com/https://my-worker.mustafakhan98.workers.dev/makepost", {"title": title, "username": username, "content": content, "image": image})
-    console.log(res.data)
-    toast.success("success: item added")
-    props.getData(res.data)
+    axios.put("https://shielded-sea-81384.herokuapp.com/https://my-worker.mustafakhan98.workers.dev/makepost", {"title": title, "username": username, "content": content, "image": image})
+    .then(res => {
+        console.log(res.data)
+        toast.success("success: item added")
+        props.getData(res.data)
+    })
+    .catch(err => {
+        console.log(err)
+        toast.error("Server error: 500")
+    })
 
     console.log(props.dataArr.data)
 
