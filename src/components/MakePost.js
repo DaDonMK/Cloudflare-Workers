@@ -4,11 +4,10 @@ import {Grid, TextField, Button} from '@material-ui/core'
 import { withStyles} from '@material-ui/core/styles'
 import { Link } from "react-router-dom"
 import {toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import '../App.css'
-import Posts from './Posts'
 import {connect} from 'react-redux'
 import {getData} from './../redux/dataReducer'
+import 'react-toastify/dist/ReactToastify.css'
+import '../App.css'
 
 toast.configure()
 
@@ -39,8 +38,6 @@ function MakePost(props) {
   const [content, setContent] = useState("")
   const [image, setImage] = useState("")
 
-  const [page, setPage] = useState(true)
-
   const {classes} = props
 
   function handleClick(){
@@ -60,9 +57,6 @@ function MakePost(props) {
         console.log(err)
         toast.error("Server error: 500")
     })
-
-    console.log(props.dataArr.data)
-
   }
 
   return (
@@ -71,7 +65,9 @@ function MakePost(props) {
           <Grid container className={classes.root}>
             <Grid item xs>
                 <Link to="/"> 
-                    <Button size="large" variant="contained" className={classes.homeBtnStyle}>Home</Button>
+                    <Button size="large" variant="contained" className={classes.homeBtnStyle}>
+                        Home
+                    </Button>
                 </Link>
             </Grid>
         </Grid>

@@ -26,16 +26,12 @@ const styles = theme => ({
 function Posts(props) {
 
   const [posts, setPosts] = useState([])
-  const [load, setLoad] = useState(false);
-
   
   const {classes} = props
-
 
   useEffect(() => {
 
     if(props.dataArr.data.length !== 0 ){
-      // console.log(props.dataArr.data)
       setPosts(props.dataArr.data)
       console.log('redux fetch')
     }else{
@@ -43,28 +39,15 @@ function Posts(props) {
         let res = await axios.get("https://my-worker.mustafakhan98.workers.dev/")
         setPosts(res.data)
         props.getData(res.data)
-      console.log('api fetch')
-
+        console.log('api fetch')
       }
 
       fetchAPI()
 
     }
-    // .catch(err => console.log(err))
 
   }, [props])
     
-  // console.log(props.dataArr.data)
-  // console.log(posts)
-
-  async function handleUp(id){
-
-    let response = await axios.put("https://shielded-sea-81384.herokuapp.com/https://my-worker.mustafakhan98.workers.dev/upvote", {"id": id})
-    console.log(response.data[0].upvote)
-    setPosts(response.data)
-    props.getData(response.data)
-
-  }
 
   return (
     <div className="App">
@@ -115,11 +98,6 @@ function Posts(props) {
                     <Typography variant="body1">{e.content}</Typography> 
                 </Grid>
               </Grid>
-              <button key={i} disabled={load} onClick={() => {
-                setLoad(true)
-                handleUp(e.id).then(() => setLoad(false))
-              }}>Upvote</button>
-
           </div>
       })
       : null}

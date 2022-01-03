@@ -49,7 +49,6 @@ function AutoPost(props){
 
     return(
         <div>
-
             <Grid container className={classes.root}> 
                 <Grid item xs>
                     <Link to="/"> 
@@ -57,7 +56,6 @@ function AutoPost(props){
                     </Link>
                 </Grid>
             </Grid>
-
 
             <Button
                     variant="contained"
@@ -75,11 +73,9 @@ function mapStateToProps(state) {
 
   return({ 
     dataArr: state.dataArr,
-    // giveMeName: state.giveMeName
   })
 }
 
 export default connect(mapStateToProps, {getData})(withStyles(styles)(AutoPost))
 
 
-// export default withStyles(styles)(AutoPost);
