@@ -34,7 +34,7 @@ function AutoPost(props){
     const {classes} = props
 
     function handleClick(){
-        axios.get("https://my-worker.mustafakhan98.workers.dev/autopost")
+        axios.get("https://cloudflare.mustafakhan98.workers.dev/autopost")
         .then(res => {
             let temp = res.data
             console.log(temp)

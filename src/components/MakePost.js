@@ -43,11 +43,11 @@ function MakePost(props) {
   function handleClick(){
 
     if(title === "" || username === "" || content === ""){
-        toast.error('Make sure to fill all inputs')
+        toast.error('Make sure to fill all inputs!')
         return 
     }
     //https://shielded-sea-81384.herokuapp.com/
-    axios.put("https://shielded-sea-81384.herokuapp.com/https://my-worker.mustafakhan98.workers.dev/makepost", {"title": title, "username": username, "content": content, "image": image})
+    axios.put("https://shielded-sea-81384.herokuapp.com/https://cloudflare.mustafakhan98.workers.dev/makepost", {"title": title, "username": username, "content": content, "image": image})
     .then(res => {
         console.log(res.data)
         toast.success("success: item added")
